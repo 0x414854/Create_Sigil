@@ -3,20 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-"""
-This Python script generates a symbolic sigil based on a given phrase by following a structured approach:
-
-- Remove vowels and double consonants from the input phrase.
-- Convert accented letters to their non-accented counterparts using Unicode normalization.
-- Assign each remaining letter to a corresponding number.
-- Draw a square divided into 8 parts and place a point on each part.
-- Connect the points with lines to create the sigil:
-  - If a line is drawn multiple times, it appears thicker.
-  - If two consecutive numbers are connected, an additional point aligns on the axis of the last connecting line.
-- Add the starting point and a final line.
-- Save the generated sigil as a PNG file
-"""
-
 def remove_vowels_and_double_consonants(phrase):
     vowels = "aeiouy"
     seen_consonants = set()
@@ -130,7 +116,6 @@ def draw_sigil(number_mapping, filename):
              color='black', linewidth=2) 
 
     ax.axis('off')
-
 
     plt.savefig(filename, bbox_inches='tight', pad_inches=0, transparent=False)
     plt.close()
